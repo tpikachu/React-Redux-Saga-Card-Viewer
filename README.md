@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-## This is an advanced Boilerplate Project using:
+## This is Reactjs Project using:
 
 - Redux
 - Axios
@@ -12,6 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Redux-Saga
 - React-Router
 - React-Router-Redux
+- Sass/Scss
 
 #### Description
 This project allows visitors to browse movies and their cast based on data from The Movie DB API.
