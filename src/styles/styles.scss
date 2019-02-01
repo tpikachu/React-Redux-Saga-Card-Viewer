@@ -1,0 +1,235 @@
+@import 'settings';
+
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import 'grid';
+@import 'single';
+
+$body-background: #222B31;
+$body-color: #95BBD5;
+$topbar-background: #222;
+$aside-background: #222B31;
+
+.app__header {
+  padding: 2rem 2rem;
+  color: white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+html {
+  height: 100%;
+}
+
+a {
+  text-decoration: none !important;
+  color: $body-color;
+}
+
+a:hover {
+  color: red;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: 'Lato';
+  color: #fff;
+}
+
+.section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.router-container {
+  display: grid;
+  grid-template-columns: 130px auto;
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+      "brand top-bar"
+      "aside main";
+}
+
+.container {
+  grid-area: main;
+  max-width: 100%;
+  //
+  overflow: hidden;
+}
+
+.single {
+  .container {
+    max-height: 100%;
+  }
+}
+
+.aside {
+  grid-area: aside;
+  background-color: $aside-background;
+  text-align: center;
+  &__nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    &__item {
+      display: block;
+      padding: 3rem 1rem 2rem;
+      color: #fff;
+      background-size: 24px 24px;
+      background-repeat: no-repeat;
+      background-position: center 1rem;
+      &--popular {
+        background-image: url('../icon/popular.svg');
+      }
+      &--top-rated {
+        background-image: url('../icon/top-rated.svg');
+      }
+      &--now-playing {
+        background-image: url('../icon/now-playing.svg');
+      }
+    }
+  }
+}
+
+
+.top-bar {
+  border-bottom:2px solid #222;
+  //position: fixed;
+  z-index: 50;
+  width: 100%;
+  display: flex;
+  padding-left: 2rem;
+  grid-area: top-bar;
+  &__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: none !important;
+    li {
+      display: inline-block;
+      position: relative;
+      a {
+        display: block;
+        padding: 2rem 1.5rem;
+        position: relative;
+        font-size: 1rem;
+        &:hover {
+          background-color: lighten($topbar-background, 5%);
+          + .submenu {
+            display: block;
+          }
+        }
+      }
+      &:hover {
+        .submenu {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__item {
+    &--account {
+      padding-left: 42px !important;
+      img {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        position: absolute;
+        top: 32px;
+        left: 0;
+
+      }
+    }
+  }
+
+  .submenu {
+    position: absolute;
+    top: 83px;
+    left: 0;
+    background-color: #222;
+    display: none;
+    li {
+      display: block;
+      a {
+        padding: 1rem 1.5rem;
+      }
+    }
+  }
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: transparent) {
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+.scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    &__item {
+      max-width: 150px;
+      &:first-child {
+        padding-left: 0 !important;
+        a {
+          padding-left: 0 !important;
+        }
+      }
+    }
+    h4 {
+      font-size: 1rem;
+    }
+  }
+}
+
+@include scrollbars(.5em, rgba(#fff, .5));
+
+
+body {
+  background-color: #fff;
+}
+
+#root {
+  font: 100% 'Roboto', Helvetica, Arial, sans-serif;
+  background-color: #222B31;
+  color: #95BBD5;
+  overflow: auto;
+  padding: 10px;
+  h1 {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .card {
+    margin: 0 auto;
+    &-body {
+      padding: 20px
+    }
+  }
+}

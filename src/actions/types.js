@@ -1,0 +1,19 @@
+import { createActionTypes } from '../utils'
+
+export const MOVIE = createActionTypes('MOVIE', [
+  'PERSONAL_INFO',
+  'PERSONAL_INFO_SUCCESS',
+  'MOVIE_INFO',
+  'MOVIE_INFO_SUCCESS',
+  'INIT_PERSONAL_INFO',
+  'GET_POPULAR_MOVIES',
+  'GET_POPULAR_MOVIES_SUCCESS',
+  'FAILURE',
+  'GET_SEARCH_KEYWORD',
+  'GET_SEARCH_KEYWORD_SUCCESS',
+  'GET_MOVIE',
+  'GET_MOVIE_SUCCESS',
+  'INIT_MOVIE_INFO',
+])
+
+export default MOVIE

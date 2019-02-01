@@ -1,0 +1,37 @@
+@include media-breakpoint-up(sm) {
+	.single {
+		height: 100%;
+		overflow: hidden;
+		#root {
+			height: 100%;
+			.router-container {
+				height: 100%;
+				.container {
+					height: 100%;
+					padding-top: 0;
+					.movie {
+						height: 100%;
+
+					}
+					.single__main {
+						display: flex;
+						align-items: stretch;
+						height: 100%;
+						&__sidebar {
+							z-index: 2;
+							width: 320px;
+							flex: 0 0 320px;
+							overflow-y:auto;
+							min-height: 0;
+							//height: 100%;
+							padding-top: 83px;
+							&--left {
+								padding-top: 120px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

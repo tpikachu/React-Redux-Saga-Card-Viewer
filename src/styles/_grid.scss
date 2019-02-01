@@ -1,0 +1,41 @@
+$grid-max-width: 1200px;
+$grid-columns: 12;
+
+*, *:after, *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    }
+
+.wrapper, .row {
+    &:after {
+        content: "";
+        width: 100%;
+        clear: both;
+        display: block;
+    }
+}
+
+.columns {
+    float: left;
+    padding: 0 2em;
+    width: 100%;
+    min-height: 1px;
+}
+
+@media only screen and (min-width: 30em) {
+    .wrapper {
+        width: 95%;
+        max-width: $grid-max-width;
+        }
+    @for $i from 1 through $grid-columns {
+        .medium-#{$i} {
+            width: 100% / $grid-columns * $i;
+            }
+        }
+    }
